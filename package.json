@@ -1,0 +1,22 @@
+{
+  "name": "12_days_of_christmas",
+  "version": "0.0.0",
+  "description": "Script that uses recursion to print out the lyrics for the 12 Days of Christmas",
+  "main": "twelvedays.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mooniker/12_days_of_xmas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mooniker/12_days_of_xmas/issues"
+  },
+  "homepage": "https://github.com/mooniker/12_days_of_xmas#readme",
+  "dependencies": {
+    "number-to-words": "^1.2.1"
+  }
+}
