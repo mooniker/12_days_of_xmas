@@ -17,16 +17,26 @@ var verses = {
 
 var twelveDaysOfXmas = {
   verses: undefined,
-  singGifts: function(day) {
-    console.log(this.verses[day]);
-    if ( day > 1 && day <= 12 ) {
-      this.singGifts( day - 1 );
-    }
+  giftsFor: function(day) {
+    // var versesToSing = this.verses[day];
+    // if ( day > 1 && day <= 12 ) {
+    //   versesToSing += '\n' + this.giftsFor( day - 1 );
+    // }
+    // return versesToSing;
+    var verseToSing = day === 1 ? this.verses[day] : convert.toWords(day) + ' ' + this.verses[day].split(' ').slice(1).join(' ');
+    verseToSing = verseToSing[0].toUpperCase() + verseToSing.slice(1);
+    return day > 1 && day <= 12 ? verseToSing + '\n' + this.giftsFor(day - 1) : verseToSing;
   },
   singVerse: function(day) {
     console.log('\nOn the', convert.toWordsOrdinal(day), 'day of Christmas');
-    console.log('my true love gave to me:');
-    this.singGifts(day);
+    console.log('My true love gave to me:');
+    // this.singGifts(day);
+    if ( day === 1 ) {
+      console.log( 'A Partridge in a Pear Tree' );
+    } else {
+      console.log(this.giftsFor(day));
+    }
+
   },
   sing: function(verses) {
     this.verses = verses;
